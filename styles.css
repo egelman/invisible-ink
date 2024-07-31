@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+
+.paper-texture  {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url('./lined-paper.jpg');
+  mix-blend-mode: multiply;
+  
+}
+.paper-texture::after {
+  z-index: 100;
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: 100px;
+  background: rgba(255, 0, 0, 0.25);
+}
+
+
+.background {
+  --x: 0;
+  --y: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 255, 0.488);
+  mask-image: radial-gradient(circle 250px at var(--x) var(--y), black 0%, transparent 100%);  
+  z-index: 1;
+}
+
+.background.hidden {
+  clip-path: circle(0px at var(--x) var(--y));
+}
+
+
+canvas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.cursor {
+  position: fixed;
+  z-index: 00;
+  width: 200px;
+  height: 300px;
+  pointer-events: none;
+  background-image: url('./pen.png');
+  background-size: 100%;
+}
