@@ -29,8 +29,10 @@ window.addEventListener('mousemove', (e) => {
   cursor.style.top = `${clientY - 300}px`
   
   if (mouseDown && bg.classList.contains('hidden')) {
-    const newX = e.offsetX
-    const newY = e.offsetY
+    cursor.style.left = `${clientX - 19}px`
+    cursor.style.top = `${clientY - 290}px`
+    const newX = x
+    const newY = y
     ctx.beginPath()
     ctx.lineWidth = Math.random() * 2 + 2
     ctx.lineCap = 'round'
@@ -50,10 +52,18 @@ window.addEventListener('mousemove', (e) => {
 window.addEventListener('mousedown', (e) => {
   getPosition(e)
   mouseDown = true
+  const {clientX, clientY} = e
+  cursor.style.left = `${clientX - 19}px`
+  cursor.style.top = `${clientY - 290}px`
+  console.log(e)
 })
 
-window.addEventListener('mouseup', () => {
+window.addEventListener('mouseup', (e) => {
   mouseDown = false
+  const {clientX, clientY} = e
+  cursor.style.left = `${clientX + 19}px`
+  cursor.style.top = `${clientY - 300}px`
+  console.log(e)
   saveCanvasData()
 })
 
@@ -68,6 +78,8 @@ window.addEventListener('keydown', (e) => {
   }
 })
 
+
+//canvas functions
 function saveCanvasData() {
   const dataURL = canvas.toDataURL('image/png');
   fetch('/save', {
