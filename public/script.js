@@ -31,8 +31,8 @@ window.addEventListener('mousemove', (e) => {
   if (mouseDown && bg.classList.contains('hidden')) {
     cursor.style.left = `${clientX - 19}px`
     cursor.style.top = `${clientY - 290}px`
-    const newX = x
-    const newY = y
+    const newX = e.offsetX
+    const newY = e.offsetY
     ctx.beginPath()
     ctx.lineWidth = Math.random() * 2 + 2
     ctx.lineCap = 'round'
