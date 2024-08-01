@@ -1,0 +1,22 @@
+{
+  "name": "invisible-ink",
+  "version": "1.0.0",
+  "description": "journal with invisible ink and flashlight",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/egelman/invisible-ink.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/egelman/invisible-ink/issues"
+  },
+  "homepage": "https://github.com/egelman/invisible-ink#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
